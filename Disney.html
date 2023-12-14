@@ -1,0 +1,52 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DISNEY</title>
+</head>
+<body>
+  <div id="player"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs/1.16.4/video.js"></script>
+  <script>
+    var player = videojs('player', {
+      controls: true,
+      sources: [{
+        src: 'https://bpprod3linear.akamaized.net/bpk-tv/irdeto_com_Channel_166/output/manifest.mpd',
+        type: 'application/vnd.ms-playready',
+        clearKey: {
+          pssh: 'PSSH_HERE',
+          kid: 'LyfQU9g9UoSFnN2LJrsX4g'
+        }
+      }],
+      playbackRates: [0.5, 1, 1.5, 2],
+      qualityLevels: ['480p', '720p', '1080p'],
+      aspectModes: ['16:9', '4:3'],
+      audioTracks: [{
+        label: 'English',
+        language: 'en'
+      }, {
+        label: 'Spanish',
+        language: 'es'
+      }]
+    });
+    
+    player.on('ready', function() {
+      player.on('qualitychange', function(event) {
+        console.log('Quality changed to: ' + event.target.quality);
+      });
+      player.on('playbackratechange', function(event) {
+        console.log('Playback rate changed to: ' + event.target.playbackRate);
+      });
+      player.on('aspectratiochange', function(event) {
+        console.log('Aspect ratio changed to: ' + event.target.aspectRatio);
+      });
+      player.on('audiotrackchange', function(event) {
+        console.log('Audio track changed to: ' + event.target.audioTrack.label);
+      });
+    });
+  </script>
+</body>
+</html>
