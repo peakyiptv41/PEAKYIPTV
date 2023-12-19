@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>AMAAN APPI</title>
+      <link rel="stylesheet" href="https://cdn.plyr.io/3.5.10/plyr.css" />
+      <style>
+         body {
+         max-width: 1024px;
+         }
+      </style>
+   </head>
+   <body>
+      <video preload="none" id="player" autoplay controls crossorigin></video>
+      <script src="https://cdn.plyr.io/3.5.10/plyr.js"></script>
+      <script src="https://cdn.jsdelivr.net/hls.js/latest/hls.js"></script>
+      <script>
+         (function () {
+         	var video = document.querySelector('#player');
+         	var playerOptions= {
+         		quality: {
+         			default: '720',
+         			options: ['720']
+         		}
+         	};
+         	var player;
+         	 player = new Plyr(video,playerOptions);
+         	if (Hls.isSupported()) {
+         		var hls = new Hls();
+         		hls.loadSource('https://prod-sports-north-gm.jiocinema.com/hls/live/2100322/hd_akamai_merged_avc_hin_ipl2024_auction_201223/master.m3u8');
+         				//hls.loadSource('https://prod-sports-north-gm.jiocinema.com/hls/live/2100322/hd_akamai_merged_avc_hin_ipl2024_auction_201223/master.m3u8');
+         	hls.attachMedia(video);
+         	hls.on(Hls.Events.MANIFEST_PARSED,function(event,data) {
+  
+ // uncomment to see data here 
+//                   		console.log('levels', hls.levels);  we get data here but not able to see in settings . 
+          
+         		playerOptions.quality = {
+         			default: hls.levels[hls.levels.length - 1].height,
+         			options: hls.levels.map((level) => level.height),
+         			forced: true,
+             // Manage quality changes
+             onChange: (quality) => {
+             	console.log('changes',quality);
+             	hls.levels.forEach((level, levelIndex) => {
+             		if (level.height === quality) {
+             			hls.currentLevel = levelIndex;
+             		}
+             	});
+             }
+         };
+        });
+       }
+         
+          // Start HLS load on play event
+          player.on('play', () => hls.startLoad());
+         
+          // Handle HLS quality changes
+          player.on('qualitychange', () => {
+          	console.log('changed');
+          	if (player.currentTime !== 0) {
+          		hls.startLoad();
+          	}
+          });
+         })();
+         
+      </script>
+   </body>
+</html>
