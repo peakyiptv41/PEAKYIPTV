@@ -1,6 +1,8 @@
+html
+<!DOCTYPE html>
 <html>
 <head>
-<title>Video Player</title>
+<title>Web Player for M3U8 Link</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body {
@@ -15,23 +17,37 @@ video {
 </style>
 </head>
 <body>
-<video id="video" controls></video>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.6.2/video.min.js"></script>
+<video controls muted autoplay loop>
+  <source src="https://prod-ent-live-gm.jiocinema.com/hls/live/2100297/hd_akamai_merged_avc_eng_ipl2024_auction_201223/master_p2.m3u8" type="application/x-mpegurl">
+  Your browser does not support the video tag.
+</video>
+<div id="quality-selector">
+  <label for="quality-1080p">1080p</label>
+  <input type="radio" id="quality-1080p" name="quality" value="1080p">
+  <label for="quality-720p">720p</label>
+  <input type="radio" id="quality-720p" name="quality" value="720p">
+  <label for="quality-480p">480p</label>
+  <input type="radio" id="quality-480p" name="quality" value="480p">
+</div>
+<div id="aspect-ratio-selector">
+  <label for="aspect-ratio-16x9">16:9</label>
+  <input type="radio" id="aspect-ratio-16x9" name="aspect-ratio" value="16x9">
+  <label for="aspect-ratio-4x3">4:3</label>
+  <input type="radio" id="aspect-ratio-4x3" name="aspect-ratio" value="4x3">
+</div>
 <script>
-var video = document.getElementById("video");
-var player = new VideoJS(video);
+var video = document.querySelector('video');
+var qualitySelector = document.getElementById('quality-selector');
+var aspectRatioSelector = document.getElementById('aspect-ratio-selector');
 
-player.on("loadedmetadata", function() {
-  player.setPlaybackRate(1);
-  player.setVolume(1);
+qualitySelector.addEventListener('change', function() {
+  var quality = this.value;
+  video.src = `https://prod-ent-live-gm.jiocinema.com/hls/live/2100297/hd_akamai_merged_avc_eng_ipl2024_auction_201223/master_p2.m3u8?quality=${quality}`;
 });
 
-player.on("qualitychange", function(event) {
-  console.log("Quality changed to: " + event.data.quality);
-});
-
-player.on("aspectratiochange", function(event) {
-  console.log("AspectRatio changed to: " + event.data.aspectratio);
+aspectRatioSelector.addEventListener('change', function() {
+  var aspectRatio = this.value;
+  video.setAttribute('aspect-ratio', aspectRatio);
 });
 </script>
 </body>
