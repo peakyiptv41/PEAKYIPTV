@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>HLS M3U8 Web Player</title>
-    <style>
-        #video-player {
-            width: 100%;
-            height: auto;
-        }
-    </style>
+    <title>HLS Live Stream Player</title>
 </head>
 <body>
-    <video id="video-player" controls>
-        <source src="https://prod-sports-north-gm.jiocinema.com/hls/live/2100322/hd_akamai_merged_avc_hin_ipl2024_auction_201223/master.m3u8" type="application/x-mpegURL">
-    </video>
+    <video id="videoPlayer" controls></video>
+
+    <select id="qualitySelect">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+    </select>
 
     <script>
-        var videoPlayer = document.getElementById('video-player');
+        var video = document.getElementById('videoPlayer');
+        var qualitySelect = document.getElementById('qualitySelect');
 
-        // Function to change the quality of the video playback
-        function changeQuality(url) {
-            videoPlayer.src = url;
-            videoPlayer.load();
-            videoPlayer.play();
-        }
+        video.src = 'https://prod-sports-north-gm.jiocinema.com/hls/live/2100322/hd_akamai_merged_avc_hin_ipl2024_auction_201223/master.m3u8';
+        video.type = 'application/x-mpegURL';
+
+        video.addEventListener('loadedmetadata', function() {
+            video.play();
+        });
+
+        qualitySelect.addEventListener('change', function() {
+            var selectedQuality = qualitySelect.value;
+            // Update the video source based on the selected quality
+            video.src = 'https://example.com/live-stream-' + selectedQuality + '.m3u8';
+            video.load();
+            video.play();
+        });
     </script>
 </body>
 </html>
