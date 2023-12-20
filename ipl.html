@@ -1,44 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HLS Player</title>
-  <link href="https://unpkg.com/video.js/dist/video-js.min.css" rel="stylesheet">
-  <script src="https://unpkg.com/video.js/dist/video.min.js"></script>
-  <script src="https://unpkg.com/hls.js/dist/hls.min.js"></script>
-</head>
+
+<html lang="en"><head><script type="text/javascript" charset="utf-8" async="" src="https://ssl.p.jwpcdn.com/player/v/8.30.1/jwpsrv.js"></script>
+    <link rel="icon" href="" type="image/gif" sizes="16x16">
+    <meta charset="UTF-8">
+    <title> </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://content.jwplatform.com/libraries/SAHhwvZq.js"></script>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        .jwplayer {
+            position: absolute !important;
+        }
+
+        .jwplayer.jw-flag-aspect-mode {
+            min-height: 100%;
+            max-height: 100%;
+        }
+
+        #jwplayerDiv {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+<script charset="utf-8" data-webpack="jwplayer:chunk-581" src="//ssl.p.jwpcdn.com/player/v/8.30.1/jwplayer.core.controls.js"></script><script charset="utf-8" data-webpack="jwplayer:chunk-98" src="//ssl.p.jwpcdn.com/player/v/8.30.1/provider.hlsjs.js"></script></head>
 <body>
+<div id="jwplayerDiv"></div>
 
-<video id="my-video" class="video-js" controls preload="auto" width="640" height="360" data-setup="{}">
-  <source src="https://prod-sports-north-gm.jiocinema.com/hls/live/2100322/hd_akamai_merged_avc_hin_ipl2024_auction_201223/master.m3u8" type="application/x-mpegURL">
-</video>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var player = videojs('my-video');
-    
-    // HLS.js setup
-    if (Hls.isSupported()) {
-      var hls = new Hls();
-      hls.loadSource('https://prod-sports-north-gm.jiocinema.com/hls/live/2100322/hd_akamai_merged_avc_hin_ipl2024_auction_201223/master.m3u8');
-      hls.attachMedia(player);
-    } else if (player.canPlayType('application/vnd.apple.mpegurl')) {
-      player.src = 'https://prod-sports-north-gm.jiocinema.com/hls/live/2100322/hd_akamai_merged_avc_hin_ipl2024_auction_201223/master.m3u8';
-    }
-
-    // Quality changes
-    player.qualityPickerPlugin();
-
-    // Aspect ratio changes
-    player.aspectRatioPlugin();
-
-    // Picture-in-Picture support
-    if ('pictureInPictureEnabled' in document) {
-      player.pipPlugin();
-    }
-  });
+<script type="text/javascript">
+    jwplayer("jwplayerDiv").setup({
+        "playlist": [
+            {
+                "file": "https://prod-sports-north-gm.jiocinema.com/hls/live/2100322/hd_akamai_merged_avc_hin_ipl2024_auction_201223/master.m3u8"
+            }
+        ],
+        "autostart": true,
+      "fullscreen": true, 
+   "mute": false,     
+    });
 </script>
-
-</body>
-</html>
+</body></html>
