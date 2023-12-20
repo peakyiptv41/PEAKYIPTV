@@ -1,45 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Player Example</title>
-
-    <!-- Include Video.js CSS -->
-    <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
-
-    <!-- Include Video.js library -->
-    <script src="https://unpkg.com/video.js/dist/video.js"></script>
-
-    <!-- Include Video.js quality selector plugin -->
-    <link href="https://unpkg.com/videojs-contrib-quality-levels/dist/videojs-contrib-quality-levels.css" rel="stylesheet">
-    <script src="https://unpkg.com/videojs-contrib-quality-levels/dist/videojs-contrib-quality-levels.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://vjs.zencdn.net/7.15.4/video-js.css" rel="stylesheet">
+  <script src="https://vjs.zencdn.net/7.15.4/video.js"></script>
 </head>
 <body>
-
-<!-- Create a video element -->
-<video id="my-video" class="video-js" controls preload="auto" width="640" height="360" data-setup="{}">
-    <!-- Provide the source of your video stream -->
+  <video id="my-video" class="video-js" controls preload="auto" width="640" height="360">
     <source src="https://prod-sports-north-gm.jiocinema.com/hls/live/2100322/hd_akamai_merged_avc_hin_ipl2024_auction_201223/master.m3u8" type="application/x-mpegURL">
-    Your browser does not support the video tag.
-</video>
+  </video>
 
-<!-- Include Video.js resolution selector plugin -->
-<script src="https://unpkg.com/videojs-resolution-switcher/dist/videojs-resolution-switcher.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var player = videojs('my-video', {
+        fluid: true,
+        controlBar: {
+          volumePanel: { inline: false }
+        }
+      });
 
-<script>
-    // Initialize the Video.js player
-    var player = videojs('my-video');
+      // Quality Selector Plugin
+      player.qualityPickerPlugin();
 
-    // Add support for changing video quality
-    player.qualityLevels();
+      // Add volume mute on/off functionality
+      player.on('volumechange', function () {
+        if (player.muted()) {
+          console.log('Volume is muted');
+        } else {
+          console.log('Volume is unmuted');
+        }
+      });
 
-    // Add support for changing video resolution
-    player.videoJsResolutionSwitcher();
+      // Add resume/pause functionality
+      player.on('play', function () {
+        console.log('Video is playing');
+      });
 
-    // Add additional features or customizations here
-
-</script>
-
+      player.on('pause', function () {
+        console.log('Video is paused');
+      });
+    });
+  </script>
 </body>
 </html>
