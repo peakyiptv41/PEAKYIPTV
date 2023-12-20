@@ -1,67 +1,45 @@
 <!DOCTYPE html>
-<html>
-   <head>
-      <meta charset="utf-8">
-      <title>HLS Demo</title>
-      <link rel="stylesheet" href="https://cdn.plyr.io/3.5.10/plyr.css" />
-      <style>
-         body {
-         max-width: 1024px;
-         }
-      </style>
-   </head>
-   <body>
-      <video preload="none" id="player" autoplay controls crossorigin></video>
-      <script src="https://cdn.plyr.io/3.5.10/plyr.js"></script>
-      <script src="https://cdn.jsdelivr.net/hls.js/latest/hls.js"></script>
-      <script>
-         (function () {
-         	var video = document.querySelector('#player');
-         	var playerOptions= {
-         		quality: {
-         			default: '720',
-         			options: ['720']
-         		}
-         	};
-         	var player;
-         	 player = new Plyr(video,playerOptions);
-         	if (Hls.isSupported()) {
-         		var hls = new Hls();
-         		hls.loadSource('http://line.lion-ott.com:80/abcd1234/abcd1234/281296');
-         				//hls.loadSource('http://line.lion-ott.com:80/abcd1234/abcd1234/281296');
-         	hls.attachMedia(video);
-         	hls.on(Hls.Events.MANIFEST_PARSED,function(event,data) {
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player Example</title>
 
-         		console.log('levels', hls.levels);
-         		playerOptions.quality = {
-         			default: hls.levels[hls.levels.length - 1].height,
-         			options: hls.levels.map((level) => level.height),
-         			forced: true,
-             // Manage quality changes
-             onChange: (quality) => {
-             	console.log('changes',quality);
-             	hls.levels.forEach((level, levelIndex) => {
-             		if (level.height === quality) {
-             			hls.currentLevel = levelIndex;
-             		}
-             	});
-             }
-         };
-        });
-       }
-         
-          // Start HLS load on play event
-          player.on('play', () => hls.startLoad());
-         
-          // Handle HLS quality changes
-          player.on('qualitychange', () => {
-          	console.log('changed');
-          	if (player.currentTime !== 0) {
-          		hls.startLoad();
-          	}
-          });
-         })();
-         
-      </script>
-   </body>
+    <!-- Include Video.js CSS -->
+    <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+
+    <!-- Include Video.js library -->
+    <script src="https://unpkg.com/video.js/dist/video.js"></script>
+
+    <!-- Include Video.js quality selector plugin -->
+    <link href="https://unpkg.com/videojs-contrib-quality-levels/dist/videojs-contrib-quality-levels.css" rel="stylesheet">
+    <script src="https://unpkg.com/videojs-contrib-quality-levels/dist/videojs-contrib-quality-levels.js"></script>
+</head>
+<body>
+
+<!-- Create a video element -->
+<video id="my-video" class="video-js" controls preload="auto" width="640" height="360" data-setup="{}">
+    <!-- Provide the source of your video stream -->
+    <source src="http://line.lion-ott.com:80/abcd1234/abcd1234/281296" type="application/x-mpegURL">
+    Your browser does not support the video tag.
+</video>
+
+<!-- Include Video.js resolution selector plugin -->
+<script src="https://unpkg.com/videojs-resolution-switcher/dist/videojs-resolution-switcher.js"></script>
+
+<script>
+    // Initialize the Video.js player
+    var player = videojs('my-video');
+
+    // Add support for changing video quality
+    player.qualityLevels();
+
+    // Add support for changing video resolution
+    player.videoJsResolutionSwitcher();
+
+    // Add additional features or customizations here
+
+</script>
+
+</body>
 </html>
