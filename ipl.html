@@ -3,34 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Extended HLS Player</title>
+  <title>HLS Player</title>
   <link href="https://unpkg.com/video.js/dist/video-js.min.css" rel="stylesheet">
   <script src="https://unpkg.com/video.js/dist/video.min.js"></script>
   <script src="https://unpkg.com/hls.js/dist/hls.min.js"></script>
 </head>
 <body>
 
-<div class="player-container">
-  <video id="my-video" class="video-js" controls preload="auto" width="640" height="360" data-setup="{}">
-    <source src="https://prod-sports-north-gm.jiocinema.com/hls/live/2100322/hd_akamai_merged_avc_hin_ipl2024_auction_201223/master.m3u8" type="application/x-mpegURL">
-  </video>
-</div>
+<video id="my-video" class="video-js" controls preload="auto" width="640" height="360" data-setup="{}">
+  <source src="https://prod-sports-north-gm.jiocinema.com/hls/live/2100322/hd_akamai_merged_avc_hin_ipl2024_auction_201223/master.m3u8" type="application/x-mpegURL">
+</video>
 
 <script>
-  // Initialize video.js after DOM is ready
   document.addEventListener('DOMContentLoaded', function () {
-    // Create video.js player
     var player = videojs('my-video');
-
-    // Check if HLS is supported
+    
+    // HLS.js setup
     if (Hls.isSupported()) {
-      // Create and attach Hls.js instance
       var hls = new Hls();
       hls.loadSource('https://prod-sports-north-gm.jiocinema.com/hls/live/2100322/hd_akamai_merged_avc_hin_ipl2024_auction_201223/master.m3u8');
       hls.attachMedia(player);
     } else if (player.canPlayType('application/vnd.apple.mpegurl')) {
-      // Fallback for non-HLS support
-      player.src = 'your-hls-stream.m3u8';
+      player.src = 'https://prod-sports-north-gm.jiocinema.com/hls/live/2100322/hd_akamai_merged_avc_hin_ipl2024_auction_201223/master.m3u8';
     }
 
     // Quality changes
@@ -43,29 +37,6 @@
     if ('pictureInPictureEnabled' in document) {
       player.pipPlugin();
     }
-
-    // Additional configurations and customizations
-    player.config({
-      controlBar: {
-        volumePanel: {
-          inline: false
-        }
-      },
-      plugins: {
-        examplePlugin: {
-          option1: true,
-          option2: 'custom'
-        }
-      }
-    });
-
-    // Custom events and callbacks
-    player.on('play', function () {
-      console.log('Video started playing');
-    });
-
-    // Add more customizations and configurations as needed
-
   });
 </script>
 
