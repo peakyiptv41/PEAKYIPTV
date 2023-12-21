@@ -1,68 +1,436 @@
 
-<html lang="en"><head><script type="text/javascript" charset="utf-8" async="" src="https://ssl.p.jwpcdn.com/player/v/8.30.1/jwpsrv.js"></script>
-    <link rel="icon" href="" type="image/gif" sizes="16x16">
-    <meta charset="UTF-8">
-    <title> </title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://content.jwplatform.com/libraries/SAHhwvZq.js"></script>
-    <style>
-        body {
-            margin: 0px;
-        }
 
-        .jwplayer {
-            position: absolute !important;
-        }
+<script disable-devtool-auto='true' src='https://cdn.jsdelivr.net/npm/disable-devtool' clear-log='true'   
 
-        .jwplayer.jw-flag-aspect-mode {
-            min-height: 100%;
-            max-height: 100%;
-        }
+  disable-select='true' disable-copy='true' disable-cut='true'   
 
-        #jwplayerDiv {
-            width: 100%;
-            height: 100%;
-        }
-    </style>
-<script charset="utf-8" data-webpack="jwplayer:chunk-581" src="//ssl.p.jwpcdn.com/player/v/8.30.1/jwplayer.core.controls.js"></script><script charset="utf-8" data-webpack="jwplayer:chunk-98" src="//ssl.p.jwpcdn.com/player/v/8.30.1/provider.hlsjs.js"></script></head>
-<body>
-<div id="jwplayerDiv"></div>
-<script type="text/JavaScript" defer="">
-        
-    jwplayer("jwplayerDiv").setup({
-        
-    preload: "auto",
-    volume: "100",
-    width: "100%",
-    aspectratio: "16:9",
-    fullscreen: true, 
-   mute: false,
-        autostart: true,
-        pipIcon: "disabled",
-        logo: { file: "https://blogger.googleusercontent.com/img/a/AVvXsEhzK1XqicCbj3BKw8t2h3lsxImcRc6bJKmx5X2saJwVd6-ZpTVWzfSaXi8vHVITt8aTWyYGb72wXyUKMmWeiDFfSVxCXeyy-AmiWdzLahNyj61YGldDn5enqvKtW7QvmtIE1uVXZqQA86FVsOULziDxMjGTwcRY4OM0Xi6raljAlt9uMPoey1Um3BNr6To=s885",
-                hide: "true" },
-        file: "https://linearjitp-playback.astro.com.my/dash-wv/linear/2504/default.mpd",
-        drm: {
-            clearkey: {
- 
-"keyId":
-"03c2e0af2f8159f9f0ce9b5dbc865f10",
+  disable-paste='true'></script>
 
-"key":
-"cd84ed136b0cc71f8ab8cd4d4f6a2e4c"
+<html>
 
-            }
-        }
-    });
+<head>
+
+<title>Sports_ISPY</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Arial&amp;display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Arial+One&amp;display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="">
+<link rel="stylesheet" href="./cxx.css">
+<!-- ===== Boxicons CSS ===== -->
+<link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+
+
+<style>
+body {
+/* display: flex; */
+align-items: center;
+justify-content: center;
+margin: 0 12px;
+height: 100%;
+background-color: #f1f1f1;
+
+}
+
+.box-shadow {
+font-family: sans-serif;
+font-weight: 600;
+background-color: #2ecc71;
+color: white;
+padding: 10px;
+border-radius: 4px;
+box-shadow: 2px 2px 20px 23px #7fecad;
+background-color: #f8f8f8;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+text-align: center;
+font-family: 'Arial', sans-serif;
+font-size: 15px;
+color: #333;
+}
+
+#title {
+font-family: 'Arial', serif;
+font-weight: bold;
+font-size: 28px;
+color: black;
+text-align: center;
+text-transform: uppercase;
+letter-spacing: 4px;
+margin: 20px 0;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+background-color: #f1f1f1;
+padding: 10px 20px;
+border-radius: 10px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+a. {
+text-decoration: none !important;
+}
+</style>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body data-sveltekit-preload-data="hover" bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWllZ29tY29uIiwiYWRibG9ja2VyU3RhdHVzIjp7IkRJU1BMQVkiOiJkaXNhYmxlZCIsIkZBQ0VCT09LIjoiZGlzYWJsZWQiLCJUV0lUVEVSIjoiZGlzYWJsZWQiLCJSRURESVQiOiJkaXNhYmxlZCJ9LCJ2ZXJzaW9uIjoiMS45LjEwIiwic2NvcmUiOjEwOTEwfV0=">
+<div style="display: contents">
+<header class="text-gray-600 body-font" style="margin: 20px;">
+<h1 id="title">Sports_ISPY</h1>
+</header>
+</div>
+<main class="">
+<title>Sports_ISPY</title>
+<div class="container" bis_skin_checked="1">
+<div class="flex flex-row mb-3 ml-1 gap-3 justify-center align-middle" bis_skin_checked="1" style="margin: 25px;">
+<input type="search" id="searchInput" class="relative w-[100%] col-span-4 block mx-4 rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:text-neutral-600 dark:placeholder:text-neutral-700" placeholder="Search"></div>
+<div id="listContainer" class="container grid place-items-center grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-8 mx-auto" bis_skin_checked="1">
+
+<div class="box1" bis_skin_checked="1">
+<a href="./chnl_data/astro_cricket.php" id="" data-sveltekit-preload-data="hover">
+<div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col" bis_skin_checked="1">
+<img src="https://iili.io/JolGRqJ.md.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+<div class="mb-5 opacity-100" bis_skin_checked="1">
+<h2 class="text-center text-sm font-bold">Astro Cricket</h2>
+<div class="flex justify-center space-x-1" bis_skin_checked="1">
+<p class="text-xs text-center">Sports</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="box1" bis_skin_checked="1">
+<a href="./chnl_data/willow_cricket.php" id="" data-sveltekit-preload-data="hover">
+<div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col" bis_skin_checked="1">
+<img src="https://iili.io/JxwqdsS.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+<div class="mb-5 opacity-100" bis_skin_checked="1">
+<h2 class="text-center text-sm font-bold">Willow Cricket HD</h2>
+<div class="flex justify-center space-x-1" bis_skin_checked="1">
+<p class="text-xs text-center">Sports</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="box1" bis_skin_checked="1">
+<a href="./chnl_data/sky_sc.php" id="" data-sveltekit-preload-data="hover">
+<div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col" bis_skin_checked="1">
+<img src="https://iili.io/JolGX1f.md.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+<div class="mb-5 opacity-100" bis_skin_checked="1">
+<h2 class="text-center text-sm font-bold">Sky Sports Cricket</h2>
+<div class="flex justify-center space-x-1" bis_skin_checked="1">
+<p class="text-xs text-center">Sports</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="box1" bis_skin_checked="1">
+<a href="./chnl_data/sky_sf.php" id="" data-sveltekit-preload-data="hover">
+<div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col" bis_skin_checked="1">
+<img src="https://iili.io/JolGSLu.md.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+<div class="mb-5 opacity-100" bis_skin_checked="1">
+<h2 class="text-center text-sm font-bold">Sky Sports Football</h2>
+<div class="flex justify-center space-x-1" bis_skin_checked="1">
+<p class="text-xs text-center">Sports</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="box1" bis_skin_checked="1">
+<a href="./chnl_data/sky_spl.php" id="" data-sveltekit-preload-data="hover">
+<div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col" bis_skin_checked="1">
+<img src="https://iili.io/JolG4rx.md.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+<div class="mb-5 opacity-100" bis_skin_checked="1">
+<h2 class="text-center text-sm font-bold">Sky Sports EPL</h2>
+<div class="flex justify-center space-x-1" bis_skin_checked="1">
+<p class="text-xs text-center">Sports</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="box1" bis_skin_checked="1">
+<a href="./chnl_data/sky_sf1.php" id="" data-sveltekit-preload-data="hover">
+<div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col" bis_skin_checked="1">
+<img src="https://iili.io/JxdchOu.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+<div class="mb-5 opacity-100" bis_skin_checked="1">
+<h2 class="text-center text-sm font-bold">Sky Sports F1</h2>
+<div class="flex justify-center space-x-1" bis_skin_checked="1">
+<p class="text-xs text-center">Sports</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="box1" bis_skin_checked="1">
+<a href="./chnl_data/sky_sg.php" id="" data-sveltekit-preload-data="hover">
+<div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col" bis_skin_checked="1">
+<img src="https://iili.io/JxdcsWv.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+<div class="mb-5 opacity-100" bis_skin_checked="1">
+<h2 class="text-center text-sm font-bold">Sky Sports Golf</h2>
+<div class="flex justify-center space-x-1" bis_skin_checked="1">
+<p class="text-xs text-center">Sports</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="box1" bis_skin_checked="1">
+<a href="./chnl_data/sky_sme.php" id="" data-sveltekit-preload-data="hover">
+<div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col" bis_skin_checked="1">
+<img src="https://iili.io/JolGskB.md.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+<div class="mb-5 opacity-100" bis_skin_checked="1">
+<h2 class="text-center text-sm font-bold">Sky Sports Main Event</h2>
+<div class="flex justify-center space-x-1" bis_skin_checked="1">
+<p class="text-xs text-center">Sports</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="box1" bis_skin_checked="1">
+<a href="./chnl_data/sky_sm.php" id="" data-sveltekit-preload-data="hover">
+<div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col" bis_skin_checked="1">
+<img src="https://iili.io/JolGthF.md.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+<div class="mb-5 opacity-100" bis_skin_checked="1">
+<h2 class="text-center text-sm font-bold">Sky Sports Mix</h2>
+<div class="flex justify-center space-x-1" bis_skin_checked="1">
+<p class="text-xs text-center">Sports</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="box1" bis_skin_checked="1">
+<a href="./chnl_data/tnt_sp1.php" id="" data-sveltekit-preload-data="hover">
+<div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col" bis_skin_checked="1">
+<img src="https://iili.io/JorH6ep.md.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+<div class="mb-5 opacity-100" bis_skin_checked="1">
+<h2 class="text-center text-sm font-bold">TNT Sports 1</h2>
+<div class="flex justify-center space-x-1" bis_skin_checked="1">
+<p class="text-xs text-center">Sports</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="box1" bis_skin_checked="1">
+<a href="./chnl_data/tnt_sp2.php" id="" data-sveltekit-preload-data="hover">
+<div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col" bis_skin_checked="1">
+<img src="https://iili.io/JotcFzF.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+<div class="mb-5 opacity-100" bis_skin_checked="1">
+<h2 class="text-center text-sm font-bold">TNT Sports 2</h2>
+<div class="flex justify-center space-x-1" bis_skin_checked="1">
+<p class="text-xs text-center">Sports</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="box1" bis_skin_checked="1">
+<a href="./chnl_data/tnt_sp3.php" id="" data-sveltekit-preload-data="hover">
+<div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col" bis_skin_checked="1">
+<img src="https://iili.io/Jotcz5N.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+<div class="mb-5 opacity-100" bis_skin_checked="1">
+<h2 class="text-center text-sm font-bold">TNT Sports 3</h2>
+<div class="flex justify-center space-x-1" bis_skin_checked="1">
+<p class="text-xs text-center">Sports</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="box1" bis_skin_checked="1">
+<a href="./chnl_data/tnt_sp4.php" id="" data-sveltekit-preload-data="hover">
+<div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col" bis_skin_checked="1">
+<img src="https://iili.io/JotcRXn.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+<div class="mb-5 opacity-100" bis_skin_checked="1">
+<h2 class="text-center text-sm font-bold">TNT Sports 4</h2>
+<div class="flex justify-center space-x-1" bis_skin_checked="1">
+<p class="text-xs text-center">Sports</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="box1" bis_skin_checked="1">
+<a href="./chnl_data/sports18_1_hd.php" id="" data-sveltekit-preload-data="hover">
+<div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col" bis_skin_checked="1">
+<img src="https://iili.io/Jok5XlS.md.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+<div class="mb-5 opacity-100" bis_skin_checked="1">
+<h2 class="text-center text-sm font-bold">Sports 18 1 HD</h2>
+<div class="flex justify-center space-x-1" bis_skin_checked="1">
+<p class="text-xs text-center">Sports</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="box1" bis_skin_checked="1">
+<a href="./chnl_data/sports18_khel.php" id="" data-sveltekit-preload-data="hover">
+<div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col" bis_skin_checked="1">
+<img src="https://iili.io/Jok5wJ9.md.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+<div class="mb-5 opacity-100" bis_skin_checked="1">
+<h2 class="text-center text-sm font-bold">Sports 18 Khel</h2>
+<div class="flex justify-center space-x-1" bis_skin_checked="1">
+<p class="text-xs text-center">Sports</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="box1" bis_skin_checked="1">
+<a href="./chnl_data/ssc1_hd.php" id="" data-sveltekit-preload-data="hover">
+<div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col" bis_skin_checked="1">
+<img src="https://iili.io/JICmgB1.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+<div class="mb-5 opacity-100" bis_skin_checked="1">
+<h2 class="text-center text-sm font-bold">SSC 1 HD</h2>
+<div class="flex justify-center space-x-1" bis_skin_checked="1">
+<p class="text-xs text-center">Sports</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="box1" bis_skin_checked="1">
+<a href="./chnl_data/ssc2_hd.php" id="" data-sveltekit-preload-data="hover">
+<div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col" bis_skin_checked="1">
+<img src="https://iili.io/JICmP2a.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+<div class="mb-5 opacity-100" bis_skin_checked="1">
+<h2 class="text-center text-sm font-bold">SSC 2 HD</h2>
+<div class="flex justify-center space-x-1" bis_skin_checked="1">
+<p class="text-xs text-center">Sports</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="box1" bis_skin_checked="1">
+<a href="./chnl_data/ssc3_hd.php" id="" data-sveltekit-preload-data="hover">
+<div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col" bis_skin_checked="1">
+<img src="https://iili.io/JICpzYb.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+<div class="mb-5 opacity-100" bis_skin_checked="1">
+<h2 class="text-center text-sm font-bold">SSC 3 HD</h2>
+<div class="flex justify-center space-x-1" bis_skin_checked="1">
+<p class="text-xs text-center">Sports</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="box1" bis_skin_checked="1">
+<a href="./chnl_data/ssc4_hd.php" id="" data-sveltekit-preload-data="hover">
+<div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col" bis_skin_checked="1">
+<img src="https://iili.io/JICyYN4.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+<div class="mb-5 opacity-100" bis_skin_checked="1">
+<h2 class="text-center text-sm font-bold">SSC 4 HD</h2>
+<div class="flex justify-center space-x-1" bis_skin_checked="1">
+<p class="text-xs text-center">Sports</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="box1" bis_skin_checked="1">
+<a href="./chnl_data/ssc5_hd.php" id="" data-sveltekit-preload-data="hover">
+<div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col" bis_skin_checked="1">
+<img src="https://iili.io/JInH2yJ.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+<div class="mb-5 opacity-100" bis_skin_checked="1">
+<h2 class="text-center text-sm font-bold">SSC 5 HD</h2>
+<div class="flex justify-center space-x-1" bis_skin_checked="1">
+<p class="text-xs text-center">Sports</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="box1" bis_skin_checked="1">
+<a href="./chnl_data/ssc_extra1.php" id="" data-sveltekit-preload-data="hover">
+<div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col" bis_skin_checked="1">
+<img src="https://iili.io/JInJhRs.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+<div class="mb-5 opacity-100" bis_skin_checked="1">
+<h2 class="text-center text-sm font-bold">SSC Extra 1</h2>
+<div class="flex justify-center space-x-1" bis_skin_checked="1">
+<p class="text-xs text-center">Sports</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="box1" bis_skin_checked="1">
+<a href="./chnl_data/ssc_extra2.php" id="" data-sveltekit-preload-data="hover">
+<div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col" bis_skin_checked="1">
+<img src="https://iili.io/JIndIIf.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+<div class="mb-5 opacity-100" bis_skin_checked="1">
+<h2 class="text-center text-sm font-bold">SSC Extra 2</h2>
+<div class="flex justify-center space-x-1" bis_skin_checked="1">
+<p class="text-xs text-center">Sports</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="box1" bis_skin_checked="1">
+<a href="./chnl_data/ssc_extra3.php" id="" data-sveltekit-preload-data="hover">
+<div class="card w-40 bg-gray-100 rounded-xl bg-base-100 shadow-lg h-48 mb-4 flex flex-col" bis_skin_checked="1">
+<img src="https://iili.io/JInd8hv.png" loading="lazy" class="h-28 mt-5 m-auto opacity-100">
+<div class="mb-5 opacity-100" bis_skin_checked="1">
+<h2 class="text-center text-sm font-bold">SSC Extra 3</h2>
+<div class="flex justify-center space-x-1" bis_skin_checked="1">
+<p class="text-xs text-center">Sports</p>
+</div>
+</div>
+</div>
+</a>
+</div>
+
+
+
+
+
+
+</div>
+</main>
+<div id="svelte-announcer" aria-live="assertive" aria-atomic="true" style="position: absolute; left: 0px; top: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); overflow: hidden; white-space: nowrap; width: 1px; height: 1px;" bis_skin_checked="1"></div>
+<script type="text/javascript" src=""></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+// Get search input element
+const searchInput = document.getElementById('searchInput');
+
+// Add input event listener
+searchInput.addEventListener('input', filterData);
+
+// Search functionality
+function filterData() {
+const updatedSearchValue = searchInput.value.toLowerCase();
+
+// Get all box elements
+const boxes = document.querySelectorAll('.box1');
+
+boxes.forEach((box) => {
+const h2Text = box.querySelector('h2').textContent.toLowerCase();
+const pText = box.querySelector('p').textContent.toLowerCase();
+
+if (h2Text.includes(updatedSearchValue) || pText.includes(updatedSearchValue)) {
+box.style.display = 'block'; // Show matching box
+} else {
+box.style.display = 'none'; // Hide non-matching box
+}
+});
+}
 </script>
+</body>
 
+</html>
 
-
-
-
-
-
-
-
-</body></html>
